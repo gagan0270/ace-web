@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield/Rounded Card -->
+  <rect x="16" y="16" width="480" height="480" rx="100" fill="url(#bgGrad)" />
+  <rect x="24" y="24" width="464" height="464" rx="92" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-opacity="0.4" />
+  
+  <!-- Stylized Academic Shield Crest -->
+  <path d="M 256 96 L 384 150 V 272 C 384 360 256 416 256 416 C 256 416 128 360 128 272 V 150 Z" fill="none" stroke="url(#goldGrad)" stroke-width="16" stroke-linejoin="round" />
+  
+  <!-- Graduation Cap Top -->
+  <path d="M 256 160 L 350 200 L 256 240 L 162 200 Z" fill="url(#goldGrad)" />
+  
+  <!-- Letter A Emblem inside Shield -->
+  <path d="M 256 210 L 310 320 H 285 L 273 295 H 239 L 227 320 H 202 Z M 256 255 L 246 277 H 266 Z" fill="#ffffff" />
+</svg>

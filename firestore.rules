@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── /students/{satsId} & all subcollections ────────────────────────────────
+    match /students/{satsId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+
+      match /{allSubcollections=**} {
+        allow read: if true;
+        allow write: if request.auth != null;
+      }
+    }
+
+    // ── School Broadcasts & Announcements (Primary Notices collection) ────────
+    match /broadcasts/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // ── All Notice, Communication & Transport Collections ────────────────────
+    match /events/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /notices/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /announcements/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /circulars/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /school_notices/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /school_events/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /communications/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /alerts/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /parent_alerts/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /communication_alerts/{docId} { allow read: if true; allow write: if request.auth != null; }
+
+    match /bus_routes/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /buses/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /routes/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /transport_routes/{docId} { allow read: if true; allow write: if request.auth != null; }
+
+    match /rankings/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /classes/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /sections/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /activity/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /teachers/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /worker_tasks/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /users/{docId} { allow read: if true; allow write: if request.auth != null; }
+    match /system/{docId} { allow read: if true; allow write: if request.auth != null; }
+
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
