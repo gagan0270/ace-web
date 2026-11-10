@@ -109,7 +109,9 @@ export async function signOut() {
 }
 
 export const demoCredentials = [
-  { email: "gagan00270@gmail.com", role: "faculty" as const },
-  { email: "yashwanth.32997@gmail.com", role: "faculty" as const },
-  { email: "gagan123@ace.school", role: "faculty" as const },
+  { label: "Principal (Demo)", email: "principal.demo@ace.school", role: "principal" as const },
+  { label: "Worker (Demo)", email: "worker.demo@ace.school", role: "faculty" as const },
+  { label: "gagan123 (Principal)", email: "gagan123@ace.school", role: "principal" as const },
+  { label: "gagan00270 (Principal)", email: "gagan00270@gmail.com", role: "principal" as const },
+  { label: "yashwanth (Worker)", email: "yashwanth.32997@gmail.com", role: "faculty" as const },
 ];

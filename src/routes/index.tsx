@@ -173,9 +173,14 @@ function LoginPage() {
                   key={d.email}
                   type="button"
                   onClick={() => useDemo(d.email)}
-                  className="ios-pill hover:bg-white transition"
+                  className="ios-pill hover:bg-white transition flex items-center gap-1.5"
                 >
-                  {d.email.split("@")[0]}
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full ${
+                      d.role === "principal" ? "bg-amber-500" : "bg-blue-500"
+                    }`}
+                  />
+                  <span>{d.label || d.email.split("@")[0]}</span>
                 </button>
               ))}
             </div>
